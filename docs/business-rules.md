@@ -1,20 +1,25 @@
 # Reglas de negocio
 
-Estas reglas reflejan solo lo confirmado por el cliente. Las condiciones aún no especificadas están listadas como preguntas abiertas; no se deben resolver mediante supuestos.
+**Estado:** pendientes de validación directa con la dueña (revisión del 17/11/2026).
 
-| ID | Regla confirmada | Detalle pendiente |
-|---|---|---|
-| BR-001 | En el armado desde cero, el total del sándwich es la suma de los precios de los ingredientes seleccionados. | Catálogo, moneda, impuestos, cantidades y redondeo. |
-| BR-002 | Al modificar un sándwich predefinido, solo se cobran los extras agregados. | Definición de extra; cargos o créditos por quitar o reemplazar ingredientes. |
-| BR-003 | Cada extra tiene un precio individual. | Quién define/actualiza los precios y si varían por tamaño o contexto. |
-| BR-004 | El cliente puede seleccionar tamaños. | Lista de tamaños y su efecto sobre ingredientes y precio. |
-| BR-005 | Se pueden configurar mínimos y máximos por etapa de selección. | Etapas, unidad contada, valores y tratamiento de incumplimientos. |
-| BR-006 | El pedido por WhatsApp solo está disponible cuando el local está abierto. | Horarios, zona horaria, excepciones, definición exacta de “disponible” y comportamiento cerrado. |
-| BR-007 | Los combos se postergan y no forman parte del alcance inicial. | Alcance y prioridad al retomarlos. |
+No hay reglas de cálculo, horarios, cobro o confirmación de pedidos expresamente aprobadas por la dueña que permitan implementar una operación real sin más relevamiento.
 
-## Reglas de cálculo conocidas
+## Condiciones a definir
 
-- Armado desde cero: total = suma de los precios de los ingredientes elegidos.
-- Personalización de predefinido: cargo de personalización = suma de los precios de los extras agregados. No agregar un cargo base por modificarlo.
+| Área | Pregunta de negocio |
+|---|---|
+| Atención en tablet | ¿Qué ocurre al terminar una selección? ¿Cuándo se considera pedido recibido? |
+| Comandas | ¿Se imprimen, se ven en cocina, se anotan manualmente o se usan varias opciones? |
+| Cobro en local | ¿Qué medios de pago aceptan y cuándo se paga? ¿Hay validación antes de preparar? |
+| Pedido web | ¿La web solo prepara el mensaje a WhatsApp o almacena/gestiona pedidos? |
+| Confirmación | ¿Qué debe hacer la dueña para aceptar o rechazar un pedido? |
+| Horarios | ¿Cuándo está habilitado pedir por cada canal? |
+| Catálogo | ¿Qué productos, panes, variantes, precios y disponibilidad están vigentes? |
+| Personalización | ¿Se permiten cambios, extras o armado desde cero? ¿Cómo se cobran? |
+| Datos | ¿Se requiere identificar clientes o conservar datos del pedido? |
 
-No se ha confirmado cómo interactúan tamaño, cantidades, descuentos, impuestos, envío, promociones o sustituciones con estos cálculos. No implementar esas interacciones hasta que se definan.
+## Antecedentes no aprobados
+
+En el borrador anterior figuraban como BR-001 a BR-007 reglas sobre suma de ingredientes, precio de extras, tamaños, mínimos/máximos, bloqueo de WhatsApp fuera de horario y postergación de combos. **Se retiran de la categoría de reglas confirmadas.** Su contenido se conserva como lista de hipótesis en `requirements.md` para consulta; sus identificadores históricos no deben citarse como autorización de desarrollo.
+
+Cuando la dueña apruebe una regla, asignar un nuevo identificador, redactarla de forma verificable e indicar su requisito y decisión asociados. No completar vacíos mediante supuestos.

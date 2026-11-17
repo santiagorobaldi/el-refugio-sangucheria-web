@@ -1,41 +1,33 @@
 # Flujo de trabajo: analista de requisitos y Codex
 
-## Fuente compartida
+## Referencia compartida
 
-El contenido versionado en GitHub es la referencia compartida para ambos roles:
+- `AGENTS.md`: instrucciones para agentes.
+- `docs/requirements.md`: contexto, hipótesis y requisitos que se aprueben.
+- `docs/business-rules.md`: reglas aprobadas y comprobables.
+- `docs/decisions/README.md`: registro de decisiones y rectificaciones.
+- `docs/roadmap.md`: secuencia condicionada a validación.
 
-- `AGENTS.md`: instrucciones para agentes que trabajan en el repositorio.
-- `docs/requirements.md`: requisitos confirmados y preguntas abiertas.
-- `docs/business-rules.md`: reglas de negocio verificables.
-- `docs/decisions/README.md`: decisiones aprobadas.
-- `docs/roadmap.md`: alcance y secuencia conocida.
+El contenido versionado en la rama principal es la referencia oficial una vez revisado y fusionado; un PR abierto aún es un cambio propuesto.
 
-Una conversación de ChatGPT o Codex por sí sola no cambia estos archivos.
+## Cómo hacer el relevamiento
 
-## Trabajo del analista en ChatGPT
+1. Leer la documentación más reciente antes de entrevistar a la dueña.
+2. Explicar en lenguaje sencillo que existe «documentación de Santiago», pero que los detalles no fueron dados por aprobados.
+3. Preguntar **una cuestión relevante por vez**. Empezar por la experiencia de la tablet y el destino de la comanda, no por parámetros técnicos.
+4. Registrar claramente el origen de cada dato: carta aportada, relato de Santiago, respuesta directa de la dueña o propuesta del analista.
+5. Clasificar **Propuesta / Aprobada / Implementada** sin elevar testimonios indirectos a aprobaciones funcionales.
+6. Para cada requisito aprobado, definir comportamiento observable, excepciones y criterios de aceptación.
+7. Preparar un PR de documentación en una rama; no fusionarlo automáticamente.
 
-1. Consultar la versión más reciente de estos documentos en GitHub antes de responder sobre requisitos.
-2. Usar las preguntas abiertas para entrevistar al cliente. Marcar claramente qué respuesta fue confirmada y qué sigue siendo una propuesta.
-3. Preparar cambios concretos para los archivos afectados, manteniendo las preguntas no resueltas y sin inventar decisiones.
-4. Proponer el cambio mediante una rama y pull request si la cuenta/conexión lo permite. Si no, entregar al cliente el texto o diff listo para incorporar.
-5. Compartir con Codex el enlace al PR o los archivos actualizados para que implemente sobre la versión revisada.
+## Cómo trabajar con Codex
 
-## Trabajo de Codex
+1. Consultar la rama `main` y los archivos anteriores, además del PR de relevamiento si todavía está pendiente.
+2. Implementar **solo** comportamientos aprobados. La aprobación de un PR documental corrige el estado de la documentación, pero no aprueba propuestas comerciales listadas en ella.
+3. No asumir precios, horarios, flujo de cobro, impresión, almacenamiento o integración de WhatsApp.
+4. Al recibir una decisión aprobada, actualizar documentos afectados y preparar tareas específicas; informar rama/commit y evidencia de pruebas.
+5. Marcar «Implementada» únicamente después de desarrollar y verificar.
 
-1. Leer la documentación más reciente de la rama objetivo antes de cambiar producto o código.
-2. Implementar únicamente lo respaldado por requisitos aprobados. Ante una ambigüedad relevante, dejar una pregunta documentada o pedir aclaración; no elegir una política de negocio en silencio.
-3. Cuando el usuario confirme requisitos nuevos, actualizar los documentos junto con el cambio correspondiente y presentarlos en un PR para revisión.
-4. En la respuesta final, indicar el commit/PR usado como base, documentos cambiados y preguntas que siguen abiertas.
+## Sincronización y transferencia
 
-## Mantener ambos roles sincronizados
-
-- GitHub conserva el historial y los cambios revisables; ambos roles deben volver a leer la versión más reciente antes de trabajar.
-- Preferir PR para cambios de requisitos y código. Revisar y fusionar el PR es la acción que hace que su contenido pase a la rama compartida acordada.
-- Si uno de los roles trabaja con una copia local o contexto anterior, puede quedar desactualizado. Indicar explícitamente la rama y el PR/commit de referencia al pasar trabajo.
-- No asumir sincronización automática entre conversaciones, memoria, checkout local y GitHub. El acceso depende de las herramientas/conexiones disponibles en cada sesión.
-
-## Handoff manual y límites
-
-El cliente debe pasar el enlace del PR, commit o archivos entre conversaciones cuando los roles no comparten el mismo contexto. ChatGPT no recibe automáticamente los cambios locales de Codex y Codex no recibe automáticamente el historial completo de otra conversación. Un conector de GitHub puede permitir leer o proponer cambios directamente, pero no garantiza que cada conversación esté conectada, autorizada o consultando la última versión.
-
-Para evitar divergencias, incluir en cada handoff: objetivo, enlace de PR/commit, estado de aprobación y preguntas pendientes. No copiar una regla de memoria conversacional como si ya estuviera aprobada en el repositorio.
+La conversación no modifica el repositorio automáticamente. Indicar a Codex el PR o commit de referencia, el estado de aprobación y las preguntas pendientes. No copiar el relevamiento anterior como si estuviera confirmado. La dueña no necesita conocer GitHub: se le puede presentar como «la documentación de Santiago».

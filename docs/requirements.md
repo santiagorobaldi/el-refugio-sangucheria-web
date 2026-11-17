@@ -1,55 +1,68 @@
 # Requisitos del producto
 
-**Estado:** borrador inicial basado únicamente en requisitos confirmados.  
-**Fuente de verdad:** este archivo y las reglas de negocio vinculadas. Las preguntas sin respuesta quedan abiertas.
+**Estado:** relevamiento preliminar en reconstrucción (17/11/2026).  
+**Criterio:** ninguna funcionalidad detallada del borrador anterior tiene aprobación expresa de la dueña. Esta documentación no autoriza implementar flujos comerciales sin nueva validación.
 
-## Alcance confirmado
+## Contexto conocido y evidencia
 
-1. **Armar un sándwich desde cero.** El cliente puede seleccionar ingredientes y el total se calcula sumando los precios de esos ingredientes.
-2. **Personalizar un sándwich predefinido.** Si el cliente modifica un sándwich predefinido, se cobra únicamente el precio de los extras agregados. No se vuelve a cobrar el precio base del sándwich por esa modificación.
-3. **Extras con precio individual.** Cada extra tiene un precio propio.
-4. **Tamaños seleccionables.** La experiencia permite elegir tamaños. Los tamaños disponibles y su efecto en el precio están pendientes de definición.
-5. **Mínimos y máximos configurables por etapa.** Cada etapa de selección puede tener límites mínimo y máximo configurables. La unidad, obligatoriedad y comportamiento exacto están pendientes.
-6. **Pedidos por WhatsApp sujetos al horario del local.** La opción de realizar/enviar un pedido por WhatsApp está disponible solo cuando el local está abierto.
-7. **Combos postergados.** Los combos quedan fuera del alcance inicial y se consideran para una etapa futura; el alcance futuro no está definido.
+- El Refugio es una sanguchería. Santiago compartió una imagen de la carta del negocio como referencia del menú vigente que conoce; no se verificaron precios ni disponibilidad real de cada producto.
+- Según Santiago, la dueña atiende sola y expresó interés en reducir la necesidad de una persona dedicada a tomar pedidos.
+- Santiago relató que ella mencionó una **tablet en el local** para que el cliente elija productos y se genere una **comanda**; falta validar cómo llega a cocina, cómo se confirma y cómo se cobra.
+- También relató interés en una **página web** para armar el pedido y continuar mediante un **mensaje de WhatsApp**; todavía no sabemos si es el flujo que ella quiere finalmente.
+- Santiago mencionó que ella no quería pagos integrados ni cuentas de usuarios; su significado y alcance deben confirmarse directamente.
+- La carta contiene sándwiches definidos. La idea de «armar un sándwich desde cero» fue mencionada, pero Santiago aclara que **no es una modalidad actualmente implementada en el negocio**.
 
-## Preguntas abiertas para el analista de requisitos
+## Carta recibida (referencia, no catálogo aprobado en sistema)
 
-Resolver con el cliente y actualizar los documentos mediante un cambio revisable. No completar estas respuestas por inferencia.
+- **Panes:** focaccia (aceitunas, parmesano, tomates secos); ciabatta.
+- **Sándwiches fríos:** Lácar, Lolog, Curruhué, Falkner, Tromen.
+- **Sándwiches calientes:** Villarrica, Osorno, Lanín, Llaima.
+- **Clásicos completos:** milanesa; lomo.
+- **Al plato:** milanesa napolitana con papas.
+- **Pizzetas:** muzzarella; mortadela y pistachos; jamón crudo y pesto de tomates secos.
+- **Papas:** simples; bravas (picante y alioli).
+- **Bebidas:** gaseosas 500 ml; gaseosas 1,5 L; cerveza lata.
 
-### Catálogo y precios
+La imagen recibida muestra espacios punteados donde irían precios, **sin valores legibles publicados**. No asignar precios, variantes, ingredientes opcionales ni stock por inferencia. Validar la transcripción y la carta actual con la dueña antes de cargar el catálogo.
 
-- ¿Cuál es la lista de ingredientes y sus precios? ¿Quién puede editarlos y con qué frecuencia?
-- ¿Qué significa exactamente “extra”: ingrediente añadido, reemplazo, porción adicional u otra opción?
-- En un sándwich predefinido, ¿quitar ingredientes o reemplazar uno por otro tiene algún cargo o crédito?
-- ¿Se permite agregar varias unidades del mismo ingrediente? ¿Cómo se calcula en ese caso?
-- ¿Los precios incluyen impuestos? ¿Qué moneda y formato de precio se muestran?
-- ¿Cómo se aplican los tamaños al sándwich armado desde cero y al predefinido? ¿Modifican ingredientes, cantidades o precios?
+## Necesidades y posibles funcionalidades (estado: propuesta por validar)
 
-### Etapas y selección
+| ID | Tema | Hipótesis / necesidad preliminar | Estado |
+|---|---|---|---|
+| P-001 | Atención en local | El cliente usa una tablet para seleccionar productos de la carta y finalizar una solicitud. | Propuesta, sin flujo aprobado |
+| P-002 | Comanda | Tras la selección se emite o muestra una comanda para preparación. Medio, destinatario y momento sin definir. | Propuesta |
+| P-003 | Web | El cliente puede explorar la carta y preparar un pedido desde su dispositivo. | Propuesta |
+| P-004 | WhatsApp | Desde la web se prepara un mensaje de pedido a WhatsApp; la dueña decidirá si el pedido requiere confirmación manual. | Propuesta |
+| P-005 | Personalización | Posibilidad futura o inicial de armar sándwiches personalizados; todavía no es una modalidad operativa actual. | Idea por explorar |
+| P-006 | Cobro y acceso | Posible ausencia de pagos online y registro de usuarios; no implica ausencia de cobro presencial ni de almacenamiento interno. | Por confirmar |
 
-- ¿Cuáles son las etapas de selección y en qué orden aparecen?
-- ¿Qué elemento se cuenta para los mínimos y máximos de cada etapa?
-- ¿Puede una etapa tener mínimo cero? ¿Qué ocurre si no se alcanza el mínimo?
-- ¿Hay etapas o selecciones que dependan del tamaño, del tipo de sándwich o de otra elección?
-- ¿Los límites se configuran por producto, etapa, tamaño o de manera global?
+## Elementos del borrador anterior: no aprobados
 
-### Pedido y horario
+Se conservan para contrastar con la dueña, **no como requisitos**:
 
-- ¿Qué zona horaria y qué días/horas definen que el local está abierto?
-- ¿Cómo se tratan feriados, cierres excepcionales y horarios que cruzan medianoche?
-- ¿Qué debe ver el usuario cuando el local está cerrado? ¿Puede guardar o preparar un pedido para después?
-- ¿“Solo cuando está abierto” se refiere a mostrar el botón, abrir WhatsApp o permitir completar el envío?
-- ¿Qué número de WhatsApp se usa y qué datos/texto deben incluirse en el mensaje?
-- ¿El pedido se considera confirmado al abrir WhatsApp, al enviarse el mensaje o tras otra confirmación?
+- Armado desde cero con precio igual a suma de ingredientes.
+- Personalización de predefinidos cobrando solo extras.
+- Cada extra con precio individual.
+- Tamaños seleccionables.
+- Mínimos y máximos por etapa de elección.
+- Habilitar WhatsApp solo durante horario abierto.
+- Dejar combos fuera de la primera versión.
 
-### Alcance y operación
+Ninguna de estas condiciones debe darse por aceptada o implementarse por el solo hecho de figurar en el borrador histórico.
 
-- ¿Qué otras páginas o funciones componen la primera versión?
-- ¿Quién administra catálogo, precios, tamaños, límites y horarios, y desde qué herramienta?
-- ¿Cómo se priorizarán y definirán los combos cuando se retomen?
-- ¿Qué criterios de aceptación y escenarios de error debe cumplir cada flujo?
+## Preguntas prioritarias para la dueña
 
-## Criterio de actualización
+1. **Primera conversación:** cuando un cliente termina de elegir en la tablet, ¿qué querés que pase: ticket impreso, pantalla para cocina, aviso para atenderlo u otra cosa?
+2. ¿Cómo se cobra el pedido dentro del local? ¿Antes o después de la preparación? ¿Quién confirma el pago?
+3. ¿La tablet debe permitir los sándwiches de la carta tal cual están, cambios simples, o armar desde cero?
+4. Para pedidos desde afuera, ¿querés solo generar el mensaje de WhatsApp o también registrar/confirmar el pedido dentro del sistema?
+5. ¿Qué información mínima necesita la comanda y cómo distinguen pedidos en el local?
+6. ¿Se permite pedir cuando el local está cerrado? ¿Quién mantiene actualizados menú, precios y disponibilidad?
+7. ¿Qué quiere decir exactamente «sin pagos» y «sin usuarios»?
+8. ¿Cuáles son las funcionalidades indispensables para abrir la primera versión?
 
-Al recibir una respuesta confirmada, convertirla en requisito verificable, reflejar la regla correspondiente en `business-rules.md`, actualizar una decisión en `decisions/README.md` cuando implique una elección aprobada y anotar el cambio en el roadmap si afecta el alcance o secuencia. Mantener aquí las preguntas que sigan sin respuesta.
+No convertir esta lista en un cuestionario de una sola vez; priorizar una pregunta por conversación según las respuestas.
+
+## Aprobación y criterios de aceptación
+
+No hay aún requisitos funcionales detallados aprobados por la dueña ni criterios de aceptación finales. Al validar cada flujo, documentar actor, pasos, resultado, excepciones y condiciones comprobables; actualizar reglas, decisiones y roadmap en el mismo PR.

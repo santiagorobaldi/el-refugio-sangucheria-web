@@ -1,21 +1,32 @@
 # Registro de decisiones de producto
 
-Este registro contiene solo decisiones confirmadas. Una mención en una conversación o una propuesta del analista no constituye aprobación.
+**Estado de revisión:** 17/11/2026.
 
-## Decisiones confirmadas
+## Decisiones aprobadas expresamente por la dueña
 
-| ID | Decisión | Estado |
+**Ninguna decisión funcional detallada está documentada con aprobación expresa verificable por el momento.**
+
+## Rectificación del relevamiento inicial
+
+Las entradas históricas D-001 a D-007 se presentaban como «confirmadas», pero Santiago aclaró que provenían de decisiones o propuestas suyas no consultadas de forma específica a la dueña. Por eso **se retira su condición de aprobadas**, sin afirmar que fueran rechazadas:
+
+| ID histórico | Tema | Estado correcto |
 |---|---|---|
-| D-001 | El precio del sándwich armado desde cero se calcula sumando los precios de sus ingredientes. | Confirmada |
-| D-002 | Al personalizar un sándwich predefinido, se cobran solo los extras agregados; no se cobra nuevamente el precio base. | Confirmada |
-| D-003 | Cada extra tiene un precio individual. | Confirmada |
-| D-004 | Se ofrecen tamaños seleccionables; el catálogo y su efecto están pendientes. | Confirmada en cuanto a la selección de tamaño |
-| D-005 | Los mínimos y máximos se configuran por etapa de selección; los valores y detalles operativos están pendientes. | Confirmada en cuanto a la configuración por etapa |
-| D-006 | El pedido por WhatsApp solo está disponible cuando el local está abierto. | Confirmada |
-| D-007 | Los combos se postergan y quedan fuera del alcance inicial. | Confirmada |
+| D-001 | Precio por suma de ingredientes al armar desde cero | Propuesta por validar |
+| D-002 | Cobrar solo extras al modificar un predefinido | Propuesta por validar |
+| D-003 | Precio individual de cada extra | Propuesta por validar |
+| D-004 | Selección de tamaños | Propuesta por validar |
+| D-005 | Mínimos y máximos configurables por etapa | Propuesta por validar |
+| D-006 | WhatsApp solo si el local está abierto | Propuesta por validar |
+| D-007 | Combos fuera del alcance inicial | Propuesta por validar |
 
-No se registraron fechas de aprobación porque no están disponibles en el contexto confirmado.
+Este ajuste de estado es una corrección documental, **no constituye una decisión comercial nueva ni una aprobación de funcionalidades**.
 
-## Cómo registrar una decisión nueva
+## Registro de futuras decisiones
 
-Agregar una fila con identificador siguiente, decisión en términos verificables, estado y fecha solo si se conoce. Documentar el contexto y las alternativas solo cuando estén confirmados. Las cuestiones sin resolver van en `../requirements.md`, no como decisiones.
+Distinguir:
+- **Propuesta:** planteada por Santiago, por el analista o mencionada informalmente; falta validación.
+- **Aprobada:** confirmada de forma expresa por la dueña, con comportamiento verificable.
+- **Implementada:** desarrollada y comprobada; requiere evidencia de verificación.
+
+Registrar contexto, decisión, fecha conocida y criterios de aceptación. No inventar fecha de aprobación. No promover una propuesta a aprobada solo porque haya aparecido en la documentación histórica.

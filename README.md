@@ -2,6 +2,13 @@
 
 Repositorio de la aplicación web de la sanguchería.
 
-La documentación de producto y las reglas confirmadas se mantendrán versionadas en este repositorio. El índice documental y el flujo de trabajo compartido entre la persona analista de requisitos y Codex se incorporarán mediante un pull request inicial.
+## Documentación
 
-Hasta que los documentos estén integrados, no asumir reglas de negocio que no hayan sido confirmadas por el cliente.
+- [Instrucciones para agentes](AGENTS.md)
+- [Requisitos y preguntas abiertas](docs/requirements.md)
+- [Reglas de negocio](docs/business-rules.md)
+- [Registro de decisiones confirmadas](docs/decisions/README.md)
+- [Roadmap](docs/roadmap.md)
+- [Flujo de trabajo del analista y Codex](docs/analyst-workflow.md)
+
+GitHub es la fuente compartida de verdad para requisitos, reglas y decisiones aprobadas. Las conversaciones por sí solas no modifican esta documentación. No asumir reglas de negocio que no hayan sido confirmadas por el cliente.
